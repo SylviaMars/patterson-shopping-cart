@@ -7,7 +7,7 @@ Angular custom component with two different functionalities: normal range and ra
 | Ex1      | Ex2   |
 |------------|-------------|
 | <img src="https://github.com/SylviaMars/patterson-shopping-cart/blob/master/src/assets/img/screencapture-localhost-4200-showcase-2021-02-12-00_54_23.png" width="500"> |
-<img src="https://github.com/SylviaMars/patterson-shopping-cart/blob/master/src/assets/img/screencapture-localhost-4200-cart-2021-02-12-00_54_43.png" width="500"> 
+<img src="https://github.com/SylviaMars/patterson-shopping-cart/blob/master/src/assets/img/screencapture-localhost-4200-cart-2021-02-12-00_54_43.png" width="500"> |
 
 To run in local run `npm install --save` and `npm start` to compile the project.
 Then go to localhost:4200.
