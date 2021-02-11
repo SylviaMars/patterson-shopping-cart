@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { DiscountApplied, ItemDto } from '../models/ItemDto.model';
-import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
