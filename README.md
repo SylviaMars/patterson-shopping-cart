@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
+Angular custom component with two different functionalities: normal range and range with fixed values.
+
+| Ex1      | Ex2   |
+|------------|-------------|
+| <img src="https://github.com/SylviaMars/custom-range-app/blob/master/screencapture-localhost-4200-exercise1-2021-01-17-17_33_35.png" width="500"> | <img src="https://github.com/SylviaMars/custom-range-app/blob/master/screencapture-localhost-4200-exercise2-2021-01-17-17_33_14.png" width="500"> |
 
 To run in local run `npm install --save` and `npm start` to compile the project.
 Then go to localhost:4200.
