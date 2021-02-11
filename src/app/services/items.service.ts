@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ItemDto } from '../models/ItemDto.model';
+import { DiscountApplied, ItemDto } from '../models/ItemDto.model';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,9 @@ export class ItemsService{
   public checkoutTotal = 0.00;
   public total = new BehaviorSubject<number>(this.checkoutTotal);
   public totalObservable = this.total.asObservable();
+
+  public discount50Applied = false;
+  public discount10Applied = false;
 
   private selectedItems: ItemDto[] = [];
 
@@ -70,8 +73,18 @@ export class ItemsService{
     this.selectedItems.forEach(i => {
       if (item.id === i.id){
         this.selectedItems.splice(this.selectedItems.indexOf(item), 1);
+        this.checkoutTotal = this.checkoutTotal - item.price;
       }
     });
+  }
+  /**
+   * @param discount value
+   * @param price: total amount
+   * @returns discounted price
+   */
+  applyDiscount(discountValue: number, price: number): DiscountApplied {
+    this.checkoutTotal = (price * discountValue) / 100;
+    return {discount: discountValue, applied: true}
   }
 
 }

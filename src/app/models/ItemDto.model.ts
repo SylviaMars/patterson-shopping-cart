@@ -14,3 +14,14 @@ export class ItemDto  {
         this.title = '';
     }
 }
+
+export enum Discount {
+
+    DTO10 = 'DTO10', 
+    DTO50 = 'DTO50'
+}
+
+export interface DiscountApplied{
+   discount: number;
+   applied: boolean;
+}

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-8">
             <mat-card id="cart">
-                <mat-card-header>CARRITO</mat-card-header>
+                <mat-card-header><b>CARRITO</b></mat-card-header>
                 <hr>
                 <mat-card-content>
                     <table *ngIf="data.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -51,12 +51,12 @@
                     <button mat-raised-button color="primary" [disabled]="true" class="w-100">FINALIZAR COMPRA</button>
                 </mat-card-content>
             </mat-card>
-            <div class="row d-flex mt-3">
+            <div [formGroup]="discountForm" id="discountForm" class="row d-flex mt-3">
                 <span class="w-25 mt-1">Código de descuento</span>
                 <mat-form-field appearance="outline" class="example-form-field">
-                    <input matInput type="text" [(ngModel)]="discount">
+                    <input matInput type="text" formControlName="discountValue">
                 </mat-form-field>
-                <button mat-raised-button color="primary" class="w-25 ml-2 mt-1">APLICAR</button>
+                <button mat-raised-button color="primary" class="w-25 ml-2 mt-1" (click)="checkDiscount()">APLICAR</button>
             </div>
         </div>
     </div>
