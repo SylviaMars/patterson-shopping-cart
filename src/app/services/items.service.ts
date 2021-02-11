@@ -1,21 +1,77 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ItemDto } from '../models/ItemDto.model';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ItemsService {
+export class ItemsService{
 
-  host = 'https://fakestoreapi.com';
+  private host = 'https://fakestoreapi.com';
+
+  public checkoutTotal = 0.00;
+  public total = new BehaviorSubject<number>(this.checkoutTotal);
+  public totalObservable = this.total.asObservable();
+
+  private selectedItems: ItemDto[] = [];
+
   constructor(private https: HttpClient) { }
 
-  getItems(itemLimit: number): Observable<HttpResponse<ItemDto>> {
+  /**
+   * @param itemLimit: number of items we need.
+   */
+  getItems(itemLimit: number): Observable<HttpResponse<ItemDto[]>> {
     const url = this.host + '/products';
     let httpParams = new HttpParams();
     httpParams = httpParams.append('limit', itemLimit.toString());
-    return this.https.get<ItemDto>(url, {params: httpParams, observe: 'response'});
+    return this.https.get<ItemDto[]>(url, {params: httpParams, observe: 'response'});
+  }
+
+  /**
+   * @param total: updates de value of the total amount price.
+   */
+  updateTotal(total: number): void {
+    this.total.next(total);
+  }
+
+  /**
+   * @returns selectedItems: array with selected items.
+   */
+  getSelectedItems(): ItemDto[] {
+    return this.selectedItems;
+  }
+
+  /**
+   * @param item: item selected
+   * Sets the array with the selected Items.
+   * Items are only added if array does not contain them.
+   */
+  setSelectedItems(item: ItemDto): void {
+    if (!this.selectedItems.includes(item, 0)) {
+      this.selectedItems.push(item);
+      this.checkoutTotal = this.checkoutTotal + item.price;
+    }
+  }
+
+  /**
+   * @returns number of items selected.
+   */
+  getItemsLenght(): number {
+    return this.selectedItems.length ;
+  }
+
+  /**
+   * @param item to remove
+   * Removes a selected item from items array.
+   */
+  removeItems(item: ItemDto): void{
+    this.selectedItems.forEach(i => {
+      if (item.id === i.id){
+        this.selectedItems.splice(this.selectedItems.indexOf(item), 1);
+      }
+    });
   }
 
 }

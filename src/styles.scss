@@ -5,3 +5,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Montserrat', sans-serif;}
+
+*:focus {
+    outline: 0 !important;
+}
+p {
+    font-size: 0.75rem;
+}

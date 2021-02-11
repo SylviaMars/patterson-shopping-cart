@@ -2,22 +2,28 @@
     height: 65px;
     padding-left: 60px;
 }
+
 .shopping-cart-icon {
     height: 32px;
 }
+
 ::ng-deep.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content{
     background-color: black;
     right: 0px !important;
 }
-button{
+
+.shopping-cart-icon-button {
+    width: 75px;
+}
+
+button {
     outline:none;
 }
+
 button::-moz-focus-inner {
     border: 0;
  }
- *:focus {
-    outline: 0 !important;
-}
+
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
     .cart-area {

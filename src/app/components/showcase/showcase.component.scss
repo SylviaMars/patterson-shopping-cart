@@ -1,12 +1,93 @@
-ol {
+ol, li {
     white-space: nowrap;
     display: flex;
     list-style-type: none;
 }
+
 a {
-    margin: 5px;
+    color: black;
+    padding-right: 5px;
+    padding-left: 5px;
+    
 }
+
 .container {
+    padding-top: 18px;
     margin: 45px auto;
     background-color: #e9ecef;
+    max-width:  1295px !important;
+}
+
+.showcase-button {
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    color: blanchedalmond;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.item-img {
+    height: 165px;
+    margin: 10px;
+    max-width: 125px;
+}
+
+.item-description{
+    width: 150px;
+    overflow: hidden;
+}
+
+ul {
+    overflow-x: auto;
+}
+
+.add-button{
+    z-index: 99;
+    position: absolute;
+    width: 100px;
+    top: 95px;
+    right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 7px;
+    background-color: black;
+    color: blanchedalmond;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+button.only-show-on-hover {
+    visibility: hidden;
+}
+
+li:hover button.only-show-on-hover  {
+    visibility: visible;
+}
+    
+.point {
+    cursor: pointer;
+}
+
+::ng-deep.mat-card{
+    width: 175px;
+    margin-bottom: 10px;
+}
+
+:host::ng-deep.mat-card-content {
+    span{
+        color: goldenrod;
+    }
+}
+
+::ng-deep.mat-progress-spinner {
+    margin: 0 auto;
+}
+
+::ng-deep.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: grey;
 }

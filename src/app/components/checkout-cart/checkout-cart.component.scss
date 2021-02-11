@@ -1,0 +1,54 @@
+.container {
+    padding-top: 18px;
+    margin: 45px auto;
+}
+
+table{
+    width: 100%;
+}
+.mat-card#cart {
+    width: 700px;
+}
+
+.mat-column-img {
+    width: 30%;
+}
+
+.mat-column-title {
+    width: 40%;
+}
+
+.mat-column-price {
+    width: 20%;
+}
+
+.mat-column-icon {
+    width: 10%;
+}
+
+.item-img {
+    height: 120px;
+    margin: 10px;
+    max-width: 120px;
+}
+
+::ng-deep.mat-card-content {
+    span{
+        color: black;
+    }
+}
+
+button{
+    height: 40px;
+}
+
+span {
+    font-size: 0.75rem;
+}
+
+.material-icons.md-24 { 
+    font-size: 24px; 
+}
+
+::ng-deep .mat-form-field { width: 165px;}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}

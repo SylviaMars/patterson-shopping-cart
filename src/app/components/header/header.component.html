@@ -1,13 +1,22 @@
 <div class="nav d-lg-inline">
     <div class="row pt-4 pb-2 m-0">
          <div class="home-logo col-12 col-lg-9 p-0 text-left">
-              <img class="icon" role="button" routerLinkActive="active" [routerLink]="['showcase']" src="/assets/img/patterson-agency-logo.png">
+              <img class="icon" role="button" routerLinkActive="active" [routerLink]="['showcase']" 
+              src="/assets/img/patterson-agency-logo.png">
             </div>
          <div class="cart-area col-12 col-lg-3 p-0 text-center">
-            <button mat-button [matBadge]="7" [matBadgeOverlap]='true' [matBadgeHidden]="false" >
-                <img class="shopping-cart-icon" role="button" routerLinkActive="active" [routerLink]="['cart']" 
-                [routerLinkActiveOptions]="{exact: true}" src="/assets/img/carrito.svg">
-            </button>
+            <div class="d-flex align-items-center">
+                <button mat-icon-button class="shopping-cart-icon-button" [matBadge]="itemsService.getItemsLenght()" 
+                [matBadgeOverlap]='true' [matBadgeHidden]="false" routerLinkActive="active" [routerLink]="['cart']" 
+                [routerLinkActiveOptions]="{exact: true}" [disableRipple]='true'>
+                    <img class="shopping-cart-icon" role="button"  src="/assets/img/carrito.svg">
+                </button>
+                <div class="ml-2">
+                    <span class="d-block">{{itemsService.checkoutTotal | number : '1.2-2'}}€</span>
+                    <button mat-button class="d-block" routerLinkActive="active" [routerLink]="['cart']" 
+                    [routerLinkActiveOptions]="{exact: true}"><b>Mi carrito</b></button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
