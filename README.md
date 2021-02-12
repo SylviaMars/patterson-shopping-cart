@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Angular custom component with two different functionalities: normal range and range with fixed values.
 
-| Ex1      | Ex2   |
+| Home      | Checkout   |
 |------------|-------------|
 | <img src="https://github.com/SylviaMars/patterson-shopping-cart/blob/master/src/assets/img/screencapture-localhost-4200-showcase-2021-02-12-00_54_23.png" width="500"> | <img src="https://github.com/SylviaMars/patterson-shopping-cart/blob/master/src/assets/img/screencapture-localhost-4200-cart-2021-02-12-00_54_43.png" width="500"> |
 
